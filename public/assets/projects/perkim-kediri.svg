@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c18" />
+      <stop offset="50%" stop-color="#0c1829" />
+      <stop offset="100%" stop-color="#111c30" />
+    </linearGradient>
+    <linearGradient id="maroonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#800000" />
+      <stop offset="100%" stop-color="#a81c1c" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#172554" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+    <filter id="dropShadow2" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bgGrad2)" />
+
+  <!-- Ambient Glow circles -->
+  <circle cx="200" cy="150" r="180" fill="#800000" opacity="0.2" filter="blur(60px)" />
+  <circle cx="1000" cy="520" r="220" fill="#0284c7" opacity="0.12" filter="blur(70px)" />
+
+  <!-- Window Frame -->
+  <g transform="translate(40, 30)" filter="url(#dropShadow2)">
+    <rect width="1120" height="615" rx="18" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Top Bar -->
+    <rect width="1120" height="48" rx="18" fill="#1e293b" />
+    <rect y="36" width="1120" height="12" fill="#1e293b" />
+    <circle cx="28" cy="24" r="6" fill="#ef4444" />
+    <circle cx="48" cy="24" r="6" fill="#f59e0b" />
+    <circle cx="68" cy="24" r="6" fill="#10b981" />
+    
+    <!-- URL Pill -->
+    <rect x="220" y="10" width="680" height="28" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+    <text x="560" y="28" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle" font-weight="500">
+      https://perkim.kedirikab.go.id — Portal Layanan Publik Dinas Perumahan &amp; Kawasan Permukiman Kab. Kediri
+    </text>
+
+    <!-- App Header / Gov Navbar -->
+    <rect y="48" width="1120" height="74" fill="#800000" />
+    <g transform="translate(30, 58)">
+      <!-- Shield / Emblem Mockup -->
+      <path d="M 0 0 L 36 0 L 36 28 C 36 40 18 48 18 48 C 18 48 0 40 0 28 Z" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" />
+      <circle cx="18" cy="18" r="8" fill="#800000" />
+      <polygon points="18,12 20,17 25,17 21,20 23,25 18,22 13,25 15,20 11,17 16,17" fill="#f59e0b" />
+
+      <text x="48" y="20" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">DINAS PERUMAHAN DAN KAWASAN PERMUKIMAN</text>
+      <text x="48" y="38" fill="#fed7aa" font-family="system-ui, sans-serif" font-size="11" font-weight="600">PEMERINTAH KABUPATEN KEDIRI • PERDULI KOMITMEN INTEGRITAS MELAYANI</text>
+    </g>
+
+    <!-- Navigation Bar Menu -->
+    <g transform="translate(680, 72)">
+      <text x="0" y="20" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">Beranda</text>
+      <text x="75" y="20" fill="#fed7aa" font-family="system-ui, sans-serif" font-size="12">Layanan</text>
+      <text x="145" y="20" fill="#fed7aa" font-family="system-ui, sans-serif" font-size="12">Profil</text>
+      <text x="200" y="20" fill="#fed7aa" font-family="system-ui, sans-serif" font-size="12">Kritik &amp; Saran</text>
+      <rect x="310" y="2" width="100" height="28" rx="6" fill="#f59e0b" />
+      <text x="360" y="20" fill="#78350f" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Portal Admin</text>
+    </g>
+
+    <!-- Main Content Area: Split 2 Columns -->
+    <!-- LEFT: Form Pengajuan Layanan Publik + NIK Status Check -->
+    <g transform="translate(30, 140)">
+      <!-- NIK Status Check Box -->
+      <rect width="530" height="110" rx="12" fill="url(#cardGrad2)" stroke="#38bdf8" stroke-width="1.2" />
+      <g transform="translate(20, 18)">
+        <text x="0" y="14" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">
+          CEK STATUS PENGAJUAN MANDIRI BERBASIS NIK (16 DIGIT)
+        </text>
+        <text x="0" y="30" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5">
+          Masyarakat dapat melacak proses penanganan berkas pengajuan tanpa perlu antre ke kantor.
+        </text>
+        
+        <rect y="42" width="370" height="34" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="14" y="64" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="500">
+          3506255208040003
+        </text>
+        <rect x="385" y="42" width="105" height="34" rx="6" fill="#0284c7" />
+        <text x="437" y="63" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">🔍 Cek Status</text>
+      </g>
+
+      <!-- Form Pengajuan Layanan Masyarakat -->
+      <g transform="translate(0, 125)">
+        <rect width="530" height="320" rx="12" fill="url(#cardGrad2)" stroke="#334155" stroke-width="1.2" />
+        <rect width="530" height="40" rx="12" fill="#800000" fill-opacity="0.3" />
+        <text x="20" y="25" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">
+          FORM PENGAJUAN LAYANAN MASYARAKAT (UPLOAD FOTO)
+        </text>
+
+        <g transform="translate(20, 52)">
+          <!-- Nama & NIK -->
+          <text x="0" y="12" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">NAMA LENGKAP &amp; NIK</text>
+          <rect y="16" width="235" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+          <text x="10" y="34" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="10.5">Widi Putri Audy</text>
+
+          <rect x="250" y="16" width="240" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+          <text x="260" y="34" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="10.5">3506255208040004</text>
+
+          <!-- Jenis Layanan Select -->
+          <text x="0" y="62" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">JENIS LAYANAN YANG DIAJUKAN</text>
+          <rect y="68" width="490" height="30" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1" />
+          <text x="12" y="87" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="11" font-weight="600">
+            Penerangan Jalan Umum (PJU) / Bantuan Perumahan RTLH
+          </text>
+          <text x="470" y="87" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">▼</text>
+
+          <!-- Deskripsi Masalah -->
+          <text x="0" y="116" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">DESKRIPSI KELUHAN &amp; ALAMAT</text>
+          <rect y="122" width="490" height="42" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+          <text x="12" y="138" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="10">Kawasan permukiman Doko Ngasem minim lampu penerangan jalan malam hari.</text>
+          <text x="12" y="153" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">Alamat: Ds. Doko, Kec. Ngasem, Kab. Kediri (Jawa Timur 64182)</text>
+
+          <!-- Upload Foto Pendukung File Input -->
+          <text x="0" y="180" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">FOTO PENDUKUNG (MAX 5MB - JPG/PNG)</text>
+          <rect y="186" width="490" height="30" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1" />
+          <rect x="4" y="190" width="105" height="22" rx="4" fill="#334155" />
+          <text x="56" y="205" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">Choose File</text>
+          <text x="120" y="205" fill="#10b981" font-family="system-ui, sans-serif" font-size="10">✓ foto_lokasi_pju_ngasem.jpg</text>
+
+          <!-- Submit Button -->
+          <rect y="226" width="490" height="32" rx="6" fill="url(#maroonGrad)" />
+          <text x="245" y="246" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">
+            KIRIM PENGAJUAN LAYANAN MASYARAKAT
+          </text>
+        </g>
+      </g>
+    </g>
+
+    <!-- RIGHT: Admin Management & Kritik/Saran Table -->
+    <g transform="translate(580, 140)">
+      <!-- Admin Dashboard Preview -->
+      <rect width="510" height="255" rx="12" fill="url(#cardGrad2)" stroke="#334155" stroke-width="1.2" />
+      <rect width="510" height="40" rx="12" fill="#0f172a" />
+      <text x="20" y="25" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">
+        PANEL ADMIN • DATA PENGAJUAN LAYANAN PUBLIK
+      </text>
+
+      <!-- Table Header -->
+      <g transform="translate(15, 52)">
+        <rect width="480" height="26" rx="4" fill="#1e293b" />
+        <text x="10" y="17" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">NO</text>
+        <text x="35" y="17" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">NAMA &amp; NIK</text>
+        <text x="160" y="17" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">LAYANAN</text>
+        <text x="270" y="17" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">STATUS</text>
+        <text x="360" y="17" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">CATATAN ADMIN</text>
+        <text x="445" y="17" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">AKSI</text>
+
+        <!-- Row 1: Selesai -->
+        <rect y="32" width="480" height="34" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="0.8" />
+        <text x="10" y="53" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9">1</text>
+        <text x="35" y="47" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">Sinta Puspita</text>
+        <text x="35" y="59" fill="#64748b" font-family="system-ui, sans-serif" font-size="8">3173412431559789</text>
+        <text x="160" y="53" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="9">Perbaikan Fasilitas</text>
+        <rect x="268" y="38" width="55" height="20" rx="4" fill="#10b981" fill-opacity="0.2" />
+        <text x="295" y="52" fill="#34d399" font-family="system-ui, sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">SELESAI</text>
+        <text x="360" y="52" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="8.5">Perbaikan jalan rampung</text>
+        <text x="455" y="52" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="9">Detail</text>
+
+        <!-- Row 2: Diproses -->
+        <rect y="72" width="480" height="34" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="0.8" />
+        <text x="10" y="93" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9">2</text>
+        <text x="35" y="87" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">Widi Putri Audy</text>
+        <text x="35" y="99" fill="#64748b" font-family="system-ui, sans-serif" font-size="8">3506255208040004</text>
+        <text x="160" y="93" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="9">Penerangan PJU</text>
+        <rect x="268" y="78" width="58" height="20" rx="4" fill="#f59e0b" fill-opacity="0.2" />
+        <text x="297" y="92" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">DIPROSES</text>
+        <text x="360" y="92" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="8.5">Jadwal survei lokasi</text>
+        <text x="455" y="92" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="9">Detail</text>
+
+        <!-- Row 3: Ditolak / Beri Catatan -->
+        <rect y="112" width="480" height="34" rx="4" fill="#0f172a" stroke="#ef4444" stroke-width="0.8" />
+        <text x="10" y="133" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9">3</text>
+        <text x="35" y="127" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">Amelia Putri</text>
+        <text x="35" y="139" fill="#64748b" font-family="system-ui, sans-serif" font-size="8">3506255208040007</text>
+        <text x="160" y="133" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="9">PJU Sawah Tosaren</text>
+        <rect x="268" y="118" width="55" height="20" rx="4" fill="#ef4444" fill-opacity="0.2" />
+        <text x="295" y="132" fill="#f87171" font-family="system-ui, sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">DITOLAK</text>
+        <text x="360" y="132" fill="#f87171" font-family="system-ui, sans-serif" font-size="8">Info alamat kurang detail</text>
+        <text x="455" y="132" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="9">Detail</text>
+      </g>
+
+      <!-- Admin Actions Summary -->
+      <g transform="translate(20, 215)">
+        <text x="0" y="12" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5">
+          Modul CRUD Lengkap: Ubah Status • Tambah Catatan Tindak Lanjut • Hapus Pengajuan • Logout Aman
+        </text>
+      </g>
+
+      <!-- Feedback Dua Arah (Kritik & Saran) Box -->
+      <g transform="translate(0, 268)">
+        <rect width="510" height="175" rx="12" fill="url(#cardGrad2)" stroke="#334155" stroke-width="1.2" />
+        <rect width="510" height="36" rx="12" fill="#1e293b" />
+        <text x="20" y="23" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">
+          KANAL ASPIRASI DUA ARAH • KRITIK, SARAN &amp; BALASAN DINAS
+        </text>
+
+        <!-- Feedback Row -->
+        <g transform="translate(15, 48)">
+          <rect width="480" height="52" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+          <text x="14" y="20" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">Andina Septiana Putri</text>
+          <text x="140" y="20" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">16-09-2025 09:29</text>
+          <text x="14" y="38" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="9.5">"Informasi di website sudah lengkap, alur pengajuan PJU sangat membantu masyarakat."</text>
+          <rect x="390" y="14" width="75" height="24" rx="4" fill="#0284c7" />
+          <text x="427" y="30" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold" text-anchor="middle">Balas Saran</text>
+        </g>
+
+        <!-- Official Response -->
+        <g transform="translate(35, 110)">
+          <rect width="460" height="38" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="0.8" />
+          <text x="12" y="16" fill="#34d399" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">Tanggapan Resmi Dinas Perkim:</text>
+          <text x="12" y="30" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9">"Terima kasih atas masukannya. Kami terus meningkatkan efisiensi tindak lanjut laporan."</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

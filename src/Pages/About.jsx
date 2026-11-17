@@ -274,7 +274,7 @@ const AboutPage = () => {
                 <p className="mt-2 text-sm text-gray-200">Freelance Web Developer / Administrasi</p>
                 <p className="text-sm text-gray-400">Administrasi data, dokumen, database, dan pengembangan website</p>
               </div>
-            </div>
+            </div> s
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
               <a href="https://drive.google.com/file/d/1PL1U5iQYsCcmVdvRp3fXc2sZ0t30Bc2F/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full lg:w-auto">

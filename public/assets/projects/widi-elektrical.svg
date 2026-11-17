@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a1a" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#18182f" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e11d48" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.1" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+
+  <!-- Ambient Glow circles -->
+  <circle cx="150" cy="120" r="180" fill="#e11d48" opacity="0.12" filter="blur(60px)" />
+  <circle cx="1050" cy="550" r="220" fill="#6366f1" opacity="0.1" filter="blur(70px)" />
+
+  <!-- Window Frame -->
+  <g transform="translate(40, 30)" filter="url(#dropShadow)">
+    <rect width="1120" height="615" rx="18" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Top Bar -->
+    <rect width="1120" height="48" rx="18" fill="#1e293b" />
+    <rect y="36" width="1120" height="12" fill="#1e293b" />
+    <circle cx="28" cy="24" r="6" fill="#ef4444" />
+    <circle cx="48" cy="24" r="6" fill="#f59e0b" />
+    <circle cx="68" cy="24" r="6" fill="#10b981" />
+    
+    <!-- URL Pill -->
+    <rect x="220" y="10" width="680" height="28" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+    <text x="560" y="28" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle" font-weight="500">
+      https://widielektrical.satcloud.tech — Sistem Informasi Manajemen Jasa AC (Laravel &amp; Midtrans)
+    </text>
+
+    <!-- App Header / Navbar -->
+    <rect y="48" width="1120" height="64" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <g transform="translate(30, 60)">
+      <!-- Logo Brand -->
+      <rect width="40" height="40" rx="10" fill="url(#primaryGrad)" />
+      <text x="20" y="26" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">WD</text>
+      <text x="52" y="21" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="bold">CV. WIDI ELEKTRICAL</text>
+      <text x="52" y="35" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Air Conditioning &amp; Mechanical Specialist • Kediri</text>
+    </g>
+
+    <!-- Nav Badges -->
+    <g transform="translate(720, 68)">
+      <rect x="0" y="0" width="80" height="26" rx="6" fill="#1e293b" />
+      <text x="40" y="17" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" font-weight="500" text-anchor="middle">Dashboard</text>
+      <rect x="90" y="0" width="85" height="26" rx="6" fill="#1e293b" />
+      <text x="132" y="17" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" font-weight="500" text-anchor="middle">Plot Teknisi</text>
+      <rect x="185" y="0" width="80" height="26" rx="6" fill="#1e293b" />
+      <text x="225" y="17" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" font-weight="500" text-anchor="middle">Keuangan</text>
+      <rect x="275" y="0" width="95" height="26" rx="6" fill="url(#primaryGrad)" />
+      <text x="322" y="17" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Admin Online</text>
+    </g>
+
+    <!-- Main Content Area: Split 2 Columns -->
+    <!-- LEFT: Form Pemesanan + Geolocation Map -->
+    <g transform="translate(30, 130)">
+      <rect width="560" height="460" rx="14" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+      
+      <!-- Card Header -->
+      <rect width="560" height="46" rx="14" fill="#e11d48" fill-opacity="0.15" />
+      <text x="20" y="28" fill="#fda4af" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">
+        FORMULIR PEMESANAN MULTI-QUANTITY &amp; LBS GEOLOCATION
+      </text>
+
+      <!-- Customer Inputs -->
+      <g transform="translate(20, 60)">
+        <text x="0" y="12" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">NAMA PELANGGAN &amp; WHATSAPP</text>
+        <rect y="18" width="250" height="32" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="12" y="38" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="11">Siti Khairah Nur Ulianisa</text>
+
+        <rect x="270" y="18" width="250" height="32" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="282" y="38" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="11">0895-0538-9474 (WhatsApp)</text>
+      </g>
+
+      <!-- Service Selection Multi-Quantity -->
+      <g transform="translate(20, 125)">
+        <text x="0" y="12" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">PILIHAN LAYANAN &amp; MULTI-UNIT (ORDER_SERVICE)</text>
+        
+        <!-- Item 1 -->
+        <rect y="20" width="520" height="34" rx="6" fill="#0f172a" stroke="#e11d48" stroke-width="1.2" />
+        <circle cx="20" cy="37" r="7" fill="#e11d48" />
+        <text x="35" y="41" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Cuci AC Split (0.5 - 1 PK)</text>
+        <text x="360" y="41" fill="#f43f5e" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Rp 75.000</text>
+        <rect x="450" y="24" width="55" height="26" rx="4" fill="#1e293b" />
+        <text x="477" y="41" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Qty: 2</text>
+
+        <!-- Item 2 -->
+        <rect y="60" width="520" height="34" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <circle cx="20" cy="77" r="7" fill="#10b981" />
+        <text x="35" y="81" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Isi Freon R32 / R410 Inverter</text>
+        <text x="360" y="81" fill="#f43f5e" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Rp 150.000</text>
+        <rect x="450" y="64" width="55" height="26" rx="4" fill="#1e293b" />
+        <text x="477" y="81" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Qty: 1</text>
+      </g>
+
+      <!-- Geolocation Map Preview -->
+      <g transform="translate(20, 240)">
+        <text x="0" y="12" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">TITIK KOORDINAT GPS (LAT: -7.815553 | LNG: 112.006559)</text>
+        <rect y="20" width="520" height="110" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" />
+        
+        <!-- Simulated Map Grid & Roads -->
+        <path d="M 20 40 L 500 40 M 20 80 L 500 80 M 120 20 L 120 130 M 340 20 L 340 130 M 240 20 L 290 130" stroke="#334155" stroke-width="2" />
+        <rect x="230" y="60" width="160" height="45" rx="6" fill="#0f172a" stroke="#e11d48" stroke-width="1" />
+        <circle cx="250" cy="82" r="5" fill="#ef4444" />
+        <text x="264" y="78" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">Lokasi Pelanggan:</text>
+        <text x="264" y="93" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="8">Jl. Dhoho No. 58, Kota Kediri</text>
+
+        <!-- Button Find Me -->
+        <rect x="400" y="30" width="105" height="24" rx="4" fill="#3b82f6" />
+        <text x="452" y="46" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">📍 Ambil Titik Saya</text>
+      </g>
+
+      <!-- Carbon Validation Alert -->
+      <g transform="translate(20, 390)">
+        <rect width="520" height="48" rx="8" fill="#1e293b" stroke="#eab308" stroke-width="1" stroke-dasharray="4,4" />
+        <circle cx="24" cy="24" r="8" fill="#eab308" fill-opacity="0.2" />
+        <text x="24" y="28" fill="#facc15" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">!</text>
+        <text x="42" y="20" fill="#facc15" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Validasi Jadwal Operasional (Carbon Engine)</text>
+        <text x="42" y="34" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5">Senin–Sabtu 08:00–17:00 • Jeda minimal 6 jam • Hari Minggu Libur Otomatis Ditolak</text>
+      </g>
+    </g>
+
+    <!-- RIGHT: Midtrans Payment & Technician Dispatch -->
+    <g transform="translate(610, 130)">
+      <!-- Payment Card 50% DP -->
+      <rect width="480" height="220" rx="14" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+      <rect width="480" height="42" rx="14" fill="#3b82f6" fill-opacity="0.15" />
+      <text x="20" y="26" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">
+        MIDTRANS SNAP GATEWAY • DP 50% &amp; PELUNASAN
+      </text>
+
+      <g transform="translate(20, 56)">
+        <text x="0" y="14" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">TOTAL TAGIHAN KONTRAK:</text>
+        <text x="0" y="34" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">Rp 300.000</text>
+
+        <!-- Split 2 DP Boxes -->
+        <rect x="180" y="2" width="130" height="46" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1.2" />
+        <text x="190" y="18" fill="#10b981" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">DOWN PAYMENT (50%)</text>
+        <text x="190" y="38" fill="#34d399" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Rp 150.000</text>
+
+        <rect x="320" y="2" width="130" height="46" rx="6" fill="#0f172a" stroke="#6366f1" stroke-width="1" />
+        <text x="330" y="18" fill="#818cf8" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">SISA PELUNASAN</text>
+        <text x="330" y="38" fill="#c7d2fe" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Rp 150.000</text>
+      </g>
+
+      <!-- Payment Status Steps -->
+      <g transform="translate(20, 125)">
+        <rect width="440" height="32" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1" />
+        <text x="16" y="20" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">
+          STATUS: DP PAID (SETTLEMENT) • WEBHOOK AUTO-CONFIRMED
+        </text>
+
+        <text x="0" y="52" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5">
+          Pelunasan 50% ditagihkan otomatis setelah teknisi mengunggah bukti foto kerja.
+        </text>
+        <text x="0" y="68" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">
+          Metode Didukung: BCA/Mandiri/BRI Virtual Account, GoPay, QRIS, Indomaret.
+        </text>
+      </g>
+
+      <!-- Technician Dispatch / Schedules Box -->
+      <g transform="translate(0, 235)">
+        <rect width="480" height="225" rx="14" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+        <rect width="480" height="42" rx="14" fill="#8b5cf6" fill-opacity="0.15" />
+        <text x="20" y="26" fill="#c4b5fd" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">
+          DYNAMIC SCHEDULES &amp; MULTI-TECHNICIAN DISPATCH
+        </text>
+
+        <!-- Tech Row 1: Ready -->
+        <g transform="translate(20, 56)">
+          <rect width="440" height="42" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+          <circle cx="22" cy="21" r="7" fill="#10b981" />
+          <text x="38" y="25" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Budi Teknisi (ID #2)</text>
+          <rect x="220" y="10" width="85" height="22" rx="4" fill="#10b981" fill-opacity="0.2" />
+          <text x="262" y="25" fill="#34d399" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">STATUS READY</text>
+          <rect x="330" y="10" width="95" height="22" rx="4" fill="#6366f1" />
+          <text x="377" y="25" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">+ Assign Tim</text>
+        </g>
+
+        <!-- Tech Row 2: Busy on Same Date -->
+        <g transform="translate(20, 108)">
+          <rect width="440" height="42" rx="6" fill="#0f172a" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1" opacity="0.75" />
+          <circle cx="22" cy="21" r="7" fill="#ef4444" />
+          <text x="38" y="25" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Andi Teknisi (ID #3)</text>
+          <rect x="220" y="10" width="85" height="22" rx="4" fill="#ef4444" fill-opacity="0.2" />
+          <text x="262" y="25" fill="#f87171" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">BUSY (LOCKED)</text>
+          <rect x="330" y="10" width="95" height="22" rx="4" fill="#334155" />
+          <text x="377" y="25" fill="#64748b" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Bentrok Jadwal</text>
+        </g>
+
+        <!-- Fonnte WhatsApp Notification Pill -->
+        <g transform="translate(20, 162)">
+          <rect width="440" height="48" rx="8" fill="#0f172a" stroke="#22c55e" stroke-width="1" />
+          <text x="14" y="20" fill="#22c55e" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">
+            FONNTE WA API &amp; CRON JOB REMINDER
+          </text>
+          <text x="14" y="36" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="9">
+            Otomasi broadcast tugas + Rute Maps ke Teknisi | Pengingat Cron H-1 (16:00) &amp; H-3 jam
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="1000" height="620">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Frame -->
+  <rect width="1000" height="620" rx="14" fill="url(#bg2)" stroke="#334155" stroke-width="1.5"/>
+  
+  <!-- Window Header -->
+  <rect width="1000" height="42" rx="14" fill="#090D16"/>
+  <rect y="28" width="1000" height="14" fill="#090D16"/>
+  <circle cx="24" cy="21" r="5" fill="#EF4444"/>
+  <circle cx="42" cy="21" r="5" fill="#F59E0B"/>
+  <circle cx="60" cy="21" r="5" fill="#10B981"/>
+  <text x="500" y="26" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+    Sheet: WEEKLY - Formula Bar Focus &amp; Dynamic SUMIFS (Zoom 130%)
+  </text>
+
+  <!-- FORMULA BAR FOCUS (HIGHLIGHTED) -->
+  <rect y="42" width="1000" height="48" fill="#1E293B" stroke="#0EA5E9" stroke-width="1.5"/>
+  <rect x="16" y="52" width="56" height="28" rx="4" fill="#0369A1"/>
+  <text x="44" y="70" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">D4</text>
+  <text x="88" y="71" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="15" font-weight="bold">fx</text>
+  
+  <rect x="110" y="50" width="874" height="32" rx="5" fill="#020617" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="124" y="71" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="13" font-weight="600">
+    =SUMIFS('DATA MENTAH'!$D:$D, 'DATA MENTAH'!$U:$U, 2026, 'DATA MENTAH'!$W:$W, $A4)
+  </text>
+
+  <!-- Table headers -->
+  <g transform="translate(24, 106)">
+    <!-- Column Letters -->
+    <rect width="952" height="24" fill="#334155"/>
+    <text x="40" y="16" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">A</text>
+    <text x="110" y="16" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">B</text>
+    <text x="210" y="16" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">C</text>
+    <text x="340" y="16" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">D [ACTIVE CELL]</text>
+    <text x="470" y="16" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">E</text>
+    <text x="560" y="16" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">F</text>
+    <text x="660" y="16" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">G (UPT)</text>
+    <text x="790" y="16" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">H (BAG SIZE)</text>
+
+    <!-- Table Header Row -->
+    <g transform="translate(0, 24)">
+      <rect width="952" height="34" fill="#0D9488"/>
+      <text x="20" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">WEEK_ISO</text>
+      <text x="96" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">YEAR</text>
+      <text x="180" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">SALES 2025</text>
+      <text x="310" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">SALES 2026 (SUMIFS)</text>
+      <text x="460" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">YoY %</text>
+      <text x="540" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">TRX</text>
+      <text x="640" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">UPT (=QTY/TRX)</text>
+      <text x="770" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">BAG SIZE (=SALES/TRX)</text>
+    </g>
+
+    <!-- Rows -->
+    <!-- Row 4 (WEEK 36) - Active / Selected -->
+    <g transform="translate(0, 58)">
+      <rect width="952" height="42" fill="#1E293B" stroke="#334155" stroke-width="0.5"/>
+      <rect x="290" y="0" width="160" height="42" fill="#0284C7" fill-opacity="0.2" stroke="#38BDF8" stroke-width="2"/>
+      <text x="30" y="26" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="12" font-weight="bold">36</text>
+      <text x="100" y="26" fill="#94A3B8" font-family="'Consolas', monospace" font-size="12">2026</text>
+      <text x="180" y="26" fill="#94A3B8" font-family="'Consolas', monospace" font-size="12">354,890,000</text>
+      <text x="310" y="26" fill="#38BDF8" font-family="'Consolas', monospace" font-size="13" font-weight="bold">398,900,000</text>
+      <text x="460" y="26" fill="#34D399" font-family="'Consolas', monospace" font-size="12" font-weight="bold">+12.4%</text>
+      <text x="546" y="26" fill="#E2E8F0" font-family="'Consolas', monospace" font-size="12">1,438</text>
+      <text x="660" y="26" fill="#FBBF24" font-family="'Consolas', monospace" font-size="12" font-weight="bold">2.27 pcs</text>
+      <text x="780" y="26" fill="#E2E8F0" font-family="'Consolas', monospace" font-size="12">Rp 277,399</text>
+    </g>
+
+    <!-- Row 5 (WEEK 37) -->
+    <g transform="translate(0, 100)">
+      <rect width="952" height="42" fill="#0F172A" stroke="#334155" stroke-width="0.5"/>
+      <text x="30" y="26" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="12" font-weight="bold">37</text>
+      <text x="100" y="26" fill="#94A3B8" font-family="'Consolas', monospace" font-size="12">2026</text>
+      <text x="180" y="26" fill="#94A3B8" font-family="'Consolas', monospace" font-size="12">412,500,000</text>
+      <text x="310" y="26" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="12">489,600,000</text>
+      <text x="460" y="26" fill="#34D399" font-family="'Consolas', monospace" font-size="12" font-weight="bold">+18.7%</text>
+      <text x="546" y="26" fill="#E2E8F0" font-family="'Consolas', monospace" font-size="12">1,698</text>
+      <text x="660" y="26" fill="#FBBF24" font-family="'Consolas', monospace" font-size="12" font-weight="bold">2.34 pcs</text>
+      <text x="780" y="26" fill="#E2E8F0" font-family="'Consolas', monospace" font-size="12">Rp 288,339</text>
+    </g>
+
+    <!-- Row 6 (WEEK 38) -->
+    <g transform="translate(0, 142)">
+      <rect width="952" height="42" fill="#1E293B" stroke="#334155" stroke-width="0.5"/>
+      <text x="30" y="26" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="12" font-weight="bold">38</text>
+      <text x="100" y="26" fill="#94A3B8" font-family="'Consolas', monospace" font-size="12">2026</text>
+      <text x="180" y="26" fill="#94A3B8" font-family="'Consolas', monospace" font-size="12">389,400,000</text>
+      <text x="310" y="26" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="12">426,400,000</text>
+      <text x="460" y="26" fill="#34D399" font-family="'Consolas', monospace" font-size="12" font-weight="bold">+9.5%</text>
+      <text x="546" y="26" fill="#E2E8F0" font-family="'Consolas', monospace" font-size="12">1,508</text>
+      <text x="660" y="26" fill="#FBBF24" font-family="'Consolas', monospace" font-size="12" font-weight="bold">2.30 pcs</text>
+      <text x="780" y="26" fill="#E2E8F0" font-family="'Consolas', monospace" font-size="12">Rp 282,758</text>
+    </g>
+
+    <!-- Annotation Callouts -->
+    <g transform="translate(100, 220)">
+      <rect width="750" height="110" rx="8" fill="#1E1B4B" stroke="#818CF8" stroke-width="1.5"/>
+      <text x="24" y="32" fill="#A5B4FC" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">
+        📌 DUA LOGIKA FORMULA UTAMA DI SHEET INI:
+      </text>
+      <text x="24" y="60" fill="#E0E7FF" font-family="'Consolas', monospace" font-size="11.5">
+        1. Dynamic Aggregate: =SUMIFS('DATA MENTAH'!$D:$D, 'DATA MENTAH'!$U:$U, $C$2, 'DATA MENTAH'!$W:$W, $A4)
+      </text>
+      <text x="24" y="85" fill="#E0E7FF" font-family="'Consolas', monospace" font-size="11.5">
+        2. Basket Size &amp; UPT: =ROUND(Total_QTY / TRX, 2)  |  BagSize: =ROUND(Total_SALES / TRX, 0)
+      </text>
+    </g>
+  </g>
+</svg>
