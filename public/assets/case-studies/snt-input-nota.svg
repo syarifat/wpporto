@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="1000" height="620">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="620" rx="14" fill="url(#bg5)" stroke="#334155" stroke-width="1.5"/>
+  <rect width="1000" height="42" rx="14" fill="#090D16"/>
+  <rect y="28" width="1000" height="14" fill="#090D16"/>
+  <circle cx="24" cy="21" r="5" fill="#EF4444"/>
+  <circle cx="42" cy="21" r="5" fill="#F59E0B"/>
+  <circle cx="60" cy="21" r="5" fill="#10B981"/>
+  <text x="500" y="26" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+    Sheet: 04 OKTOBER - Input Nota Omnichannel &amp; Validasi Keseimbangan [CEK HARUS 0]
+  </text>
+
+  <!-- Formula Bar Focus -->
+  <rect y="42" width="1000" height="46" fill="#1E293B" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="16" y="52" width="56" height="26" rx="4" fill="#065F46"/>
+  <text x="44" y="69" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">H2</text>
+  <text x="88" y="70" fill="#34D399" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">fx</text>
+  <rect x="108" y="50" width="876" height="30" rx="4" fill="#020617" stroke="#34D399" stroke-width="1.2"/>
+  <text x="122" y="70" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="12.5">
+    =ROUND(F2 - (J2 + N2), 2)  [CEK KESEIMBANGAN: NILAI HARUS 0]  |  NET 1.11: =ROUND(K2 / 1.11, 0)
+  </text>
+
+  <g transform="translate(24, 102)">
+    <rect width="952" height="34" fill="#334155"/>
+    <text x="16" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">CHANNEL</text>
+    <text x="90" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">NO STRUK</text>
+    <text x="180" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">TOTAL STRUK</text>
+    <text x="280" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">METODE</text>
+    <text x="350" y="22" fill="#34D399" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">CEK (HARUS 0)</text>
+    <text x="470" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">NET DP</text>
+    <text x="560" y="22" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">NET DP (1.11)</text>
+    <text x="670" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">NET CV</text>
+    <text x="760" y="22" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">NET CV (1.11)</text>
+    <text x="870" y="22" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">SALES</text>
+
+    <!-- Row 1 -->
+    <g transform="translate(0, 34)">
+      <rect width="952" height="38" fill="#1E293B" stroke="#334155" stroke-width="0.5"/>
+      <text x="16" y="24" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">HAPTIK</text>
+      <text x="90" y="24" fill="#E2E8F0" font-family="'Consolas', monospace" font-size="11">310001</text>
+      <text x="180" y="24" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="11" font-weight="bold">Rp 149,500</text>
+      <text x="280" y="24" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11">QRIS</text>
+      <rect x="350" y="8" width="60" height="22" rx="4" fill="#065F46"/>
+      <text x="380" y="23" fill="#6EE7B7" font-family="'Consolas', monospace" font-size="11" font-weight="bold" text-anchor="middle">0</text>
+      <text x="470" y="24" fill="#CBD5E1" font-family="'Consolas', monospace" font-size="11">149,500</text>
+      <text x="560" y="24" fill="#38BDF8" font-family="'Consolas', monospace" font-size="11" font-weight="bold">134,685</text>
+      <text x="670" y="24" fill="#64748B" font-family="'Consolas', monospace" font-size="11">-</text>
+      <text x="760" y="24" fill="#64748B" font-family="'Consolas', monospace" font-size="11">-</text>
+      <text x="870" y="24" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">INTAN</text>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(0, 72)">
+      <rect width="952" height="38" fill="#0F172A" stroke="#334155" stroke-width="0.5"/>
+      <text x="16" y="24" fill="#A855F7" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">TIKTOK</text>
+      <text x="90" y="24" fill="#E2E8F0" font-family="'Consolas', monospace" font-size="11">310003</text>
+      <text x="180" y="24" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="11" font-weight="bold">Rp 89,500</text>
+      <text x="280" y="24" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11">QRIS</text>
+      <rect x="350" y="8" width="60" height="22" rx="4" fill="#065F46"/>
+      <text x="380" y="23" fill="#6EE7B7" font-family="'Consolas', monospace" font-size="11" font-weight="bold" text-anchor="middle">0</text>
+      <text x="470" y="24" fill="#64748B" font-family="'Consolas', monospace" font-size="11">-</text>
+      <text x="560" y="24" fill="#64748B" font-family="'Consolas', monospace" font-size="11">-</text>
+      <text x="670" y="24" fill="#CBD5E1" font-family="'Consolas', monospace" font-size="11">89,500</text>
+      <text x="760" y="24" fill="#38BDF8" font-family="'Consolas', monospace" font-size="11" font-weight="bold">80,631</text>
+      <text x="870" y="24" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">SITI</text>
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(0, 110)">
+      <rect width="952" height="38" fill="#1E293B" stroke="#334155" stroke-width="0.5"/>
+      <text x="16" y="24" fill="#22C55E" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">WHATSAPP</text>
+      <text x="90" y="24" fill="#E2E8F0" font-family="'Consolas', monospace" font-size="11">310004</text>
+      <text x="180" y="24" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="11" font-weight="bold">Rp 89,500</text>
+      <text x="280" y="24" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11">VA BCA</text>
+      <rect x="350" y="8" width="60" height="22" rx="4" fill="#065F46"/>
+      <text x="380" y="23" fill="#6EE7B7" font-family="'Consolas', monospace" font-size="11" font-weight="bold" text-anchor="middle">0</text>
+      <text x="470" y="24" fill="#CBD5E1" font-family="'Consolas', monospace" font-size="11">89,500</text>
+      <text x="560" y="24" fill="#38BDF8" font-family="'Consolas', monospace" font-size="11" font-weight="bold">80,631</text>
+      <text x="670" y="24" fill="#64748B" font-family="'Consolas', monospace" font-size="11">-</text>
+      <text x="760" y="24" fill="#64748B" font-family="'Consolas', monospace" font-size="11">-</text>
+      <text x="870" y="24" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">DIMAS</text>
+    </g>
+
+    <!-- Row 4 -->
+    <g transform="translate(0, 148)">
+      <rect width="952" height="38" fill="#0F172A" stroke="#334155" stroke-width="0.5"/>
+      <text x="16" y="24" fill="#22C55E" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">WHATSAPP</text>
+      <text x="90" y="24" fill="#E2E8F0" font-family="'Consolas', monospace" font-size="11">310006</text>
+      <text x="180" y="24" fill="#F8FAFC" font-family="'Consolas', monospace" font-size="11" font-weight="bold">Rp 299,000</text>
+      <text x="280" y="24" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="11">QRIS</text>
+      <rect x="350" y="8" width="60" height="22" rx="4" fill="#065F46"/>
+      <text x="380" y="23" fill="#6EE7B7" font-family="'Consolas', monospace" font-size="11" font-weight="bold" text-anchor="middle">0</text>
+      <text x="470" y="24" fill="#CBD5E1" font-family="'Consolas', monospace" font-size="11">299,000</text>
+      <text x="560" y="24" fill="#38BDF8" font-family="'Consolas', monospace" font-size="11" font-weight="bold">269,369</text>
+      <text x="670" y="24" fill="#64748B" font-family="'Consolas', monospace" font-size="11">-</text>
+      <text x="760" y="24" fill="#64748B" font-family="'Consolas', monospace" font-size="11">-</text>
+      <text x="870" y="24" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">FAJAR</text>
+    </g>
+
+    <!-- Annotation Callouts -->
+    <g transform="translate(0, 210)">
+      <rect width="952" height="96" rx="8" fill="#14532D" stroke="#22C55E" stroke-width="1.2"/>
+      <text x="20" y="28" fill="#86EFAC" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">
+        🛡️ VALIDASI MUTLAK: CEK HARUS 0 &amp; DPP 1.11
+      </text>
+      <text x="20" y="52" fill="#DCFCE7" font-family="system-ui, sans-serif" font-size="11">
+        • Setiap nota dicek silang: Total Struk = (Gross DP + Gross CV). Jika selisih != 0, baris otomatis merah (Conditional Formatting).
+      </text>
+      <text x="20" y="74" fill="#DCFCE7" font-family="system-ui, sans-serif" font-size="11">
+        • Kolom Net (1.11) secara otomatis mengeliminasi komponen PPN 11% sehingga omzet yang diakui murni merupakan Dasar Pengenaan Pajak (DPP).
+      </text>
+    </g>
+  </g>
+</svg>

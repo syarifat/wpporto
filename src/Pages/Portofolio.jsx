@@ -13,7 +13,11 @@ import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Certificate from "../components/Certificate";
-import { Code, Award, Boxes } from "lucide-react";
+import { Code, Award, Boxes, FileSpreadsheet, LayoutGrid, Building2, Wrench } from "lucide-react";
+import CaseStudyCard from "../components/CaseStudyCard";
+import { caseStudiesData } from "../data/caseStudiesData";
+import { defaultProjects } from "../data/defaultProjects";
+import { toSlug } from "../utils/slug";
 
 
 const ToggleButton = ({ onClick, isShowingMore }) => (
@@ -123,6 +127,8 @@ export default function FullWidthTabs() {
   const [certificates, setCertificates] = useState([]);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllCertificates, setShowAllCertificates] = useState(false);
+  const [selectedProjectFilter, setSelectedProjectFilter] = useState("all"); // 'all', 'widi', 'perkim'
+  const [selectedCaseStudyId, setSelectedCaseStudyId] = useState("edp-weekly-reporting"); // 'edp-weekly-reporting', 'snt-omnichannel-tracking', or 'all'
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
 
@@ -131,7 +137,6 @@ export default function FullWidthTabs() {
       once: false,
     });
   }, []);
-
 
   const fetchData = useCallback(async () => {
     try {
@@ -149,30 +154,92 @@ export default function FullWidthTabs() {
       const projectData = projectsResponse.data || [];
       const certificateData = certificatesResponse.data || [];
 
-      setProjects(projectData);
+      // Gabungkan dan perbarui dengan defaultProjects (agar gambar screenshot asli & status tanpa live demo langsung aktif)
+      let combinedProjects = projectData.map((item) => {
+        const matchingDefault = defaultProjects.find(
+          (dp) => toSlug(dp.Title) === toSlug(item.Title)
+        );
+        if (matchingDefault) {
+          return {
+            ...item,
+            Img: matchingDefault.Img,
+            Link: matchingDefault.Link,
+            TechStack: matchingDefault.TechStack,
+            Features: matchingDefault.Features,
+            Role: matchingDefault.Role,
+            Period: matchingDefault.Period,
+            Institution: matchingDefault.Institution,
+          };
+        }
+        return item;
+      });
+
+      defaultProjects.forEach((dp) => {
+        if (!combinedProjects.some((p) => toSlug(p.Title) === toSlug(dp.Title))) {
+          combinedProjects.unshift(dp);
+        }
+      });
+
+      setProjects(combinedProjects);
       setCertificates(certificateData);
 
-      // Store in localStorage (fungsionalitas ini tetap dipertahankan)
-      localStorage.setItem("projects", JSON.stringify(projectData));
+      // Store in localStorage
+      localStorage.setItem("projects", JSON.stringify(combinedProjects));
       localStorage.setItem("certificates", JSON.stringify(certificateData));
       
       // Dispatch custom event to notify other components (like About)
       window.dispatchEvent(new Event("portfolioDataUpdated"));
     } catch (error) {
       console.error("Error fetching data from Supabase:", error.message);
+      // Fallback jika offline / database belum berisi
+      const cachedProjects = localStorage.getItem('projects');
+      if (!cachedProjects) {
+        setProjects(defaultProjects);
+        localStorage.setItem("projects", JSON.stringify(defaultProjects));
+      }
     }
   }, []);
 
-
-
   useEffect(() => {
-    // Coba ambil dari localStorage dulu untuk laod lebih cepat
+    // Coba ambil dari localStorage dulu untuk load lebih cepat
     const cachedProjects = localStorage.getItem('projects');
     const cachedCertificates = localStorage.getItem('certificates');
 
-    if (cachedProjects && cachedCertificates) {
-        setProjects(JSON.parse(cachedProjects));
-        setCertificates(JSON.parse(cachedCertificates));
+    if (cachedProjects) {
+      const parsed = JSON.parse(cachedProjects);
+      let combined = parsed.map((item) => {
+        const matchingDefault = defaultProjects.find(
+          (dp) => toSlug(dp.Title) === toSlug(item.Title)
+        );
+        if (matchingDefault) {
+          return {
+            ...item,
+            Img: matchingDefault.Img,
+            Link: matchingDefault.Link,
+            TechStack: matchingDefault.TechStack,
+            Features: matchingDefault.Features,
+            Role: matchingDefault.Role,
+            Period: matchingDefault.Period,
+            Institution: matchingDefault.Institution,
+          };
+        }
+        return item;
+      });
+
+      defaultProjects.forEach((dp) => {
+        if (!combined.some((p) => toSlug(p.Title) === toSlug(dp.Title))) {
+          combined.unshift(dp);
+        }
+      });
+      setProjects(combined);
+      localStorage.setItem('projects', JSON.stringify(combined));
+    } else {
+      setProjects(defaultProjects);
+      localStorage.setItem('projects', JSON.stringify(defaultProjects));
+    }
+
+    if (cachedCertificates) {
+      setCertificates(JSON.parse(cachedCertificates));
     }
     
     fetchData(); // Tetap panggil fetchData untuk sinkronisasi data terbaru
@@ -190,7 +257,18 @@ export default function FullWidthTabs() {
     }
   }, []);
 
-  const displayedProjects = showAllProjects ? projects : projects.slice(0, initialItems);
+  const filteredProjects = projects.filter((project) => {
+    if (selectedProjectFilter === "all") return true;
+    if (selectedProjectFilter === "widi") {
+      return project.Title?.toLowerCase().includes("widi");
+    }
+    if (selectedProjectFilter === "perkim") {
+      return project.Title?.toLowerCase().includes("perkim");
+    }
+    return true;
+  });
+
+  const displayedProjects = showAllProjects ? filteredProjects : filteredProjects.slice(0, initialItems);
   const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, initialItems);
 
   // Sisa dari komponen (return statement) tidak ada perubahan
@@ -290,50 +368,189 @@ export default function FullWidthTabs() {
               {...a11yProps(0)}
             />
             <Tab
+              icon={<FileSpreadsheet className="mb-2 w-5 h-5 transition-all duration-300" />}
+              label="Data Analytics"
+              {...a11yProps(1)}
+            />
+            <Tab
               icon={<Award className="mb-2 w-5 h-5 transition-all duration-300" />}
               label="Certificates"
-              {...a11yProps(1)}
+              {...a11yProps(2)}
             />
             <Tab
               icon={<Boxes className="mb-2 w-5 h-5 transition-all duration-300" />}
               label="Tech Stack"
-              {...a11yProps(2)}
+              {...a11yProps(3)}
             />
           </Tabs>
         </AppBar>
 
         <div>
+          {/* TAB 0: WEB PROJECTS */}
           <TabPanel value={value} index={0}>
-            <div className="container mx-auto flex justify-center items-center overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
-                {displayedProjects.map((project, index) => (
-                  <div
-                    key={project.id || index}
-                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
-                  >
-                    <CardProject
-                      Img={project.Img}
-                      Title={project.Title}
-                      Description={project.Description}
-                      Link={project.Link}
-                      id={project.id}
-                    />
-                  </div>
-                ))}
+            <div className="container mx-auto">
+              {/* Header Title */}
+              <div className="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-3">
+                  <Code className="w-4 h-4" />
+                  <span>Web Applications &amp; Digital Services</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  Featured Web Development Projects
+                </h3>
+                <p className="mt-2 text-xs sm:text-sm text-gray-400">
+                  Implementasi sistem informasi manajemen berbasis Laravel &amp; Midtrans serta portal e-government publik hasil Tugas Akhir dan PKL.
+                </p>
               </div>
+
+              {/* Project Filter Switcher Pills - Pemilihan mana yang mau ditampilkan */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-10" data-aos="fade-up" data-aos-delay="100">
+                <button
+                  type="button"
+                  onClick={() => setSelectedProjectFilter("all")}
+                  className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2.5 ${
+                    selectedProjectFilter === "all"
+                      ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-600/30 scale-105 border border-indigo-400/40"
+                      : "bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/10"
+                  }`}
+                >
+                  <LayoutGrid className="w-4 h-4" />
+                  <span>Semua Proyek</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedProjectFilter("widi")}
+                  className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2.5 ${
+                    selectedProjectFilter === "widi"
+                      ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-600/30 scale-105 border border-indigo-400/40"
+                      : "bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/10"
+                  }`}
+                >
+                  <Wrench className="w-4 h-4 text-rose-400" />
+                  <span>CV. Widi Elektrical (Laravel)</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedProjectFilter("perkim")}
+                  className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2.5 ${
+                    selectedProjectFilter === "perkim"
+                      ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-600/30 scale-105 border border-indigo-400/40"
+                      : "bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/10"
+                  }`}
+                >
+                  <Building2 className="w-4 h-4 text-amber-400" />
+                  <span>Dinas Perkim Kediri (PHP/Bootstrap)</span>
+                </button>
+              </div>
+
+              {/* Projects Grid */}
+              <div className="flex justify-center items-center overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5 w-full">
+                  {displayedProjects.map((project, index) => (
+                    <div
+                      key={project.id || index}
+                      data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                      data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                    >
+                      <CardProject
+                        Img={project.Img}
+                        Title={project.Title}
+                        Description={project.Description}
+                        Link={project.Link}
+                        id={project.id}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {filteredProjects.length > initialItems && (
+                <div className="mt-6 w-full flex justify-start">
+                  <ToggleButton
+                    onClick={() => toggleShowMore("projects")}
+                    isShowingMore={showAllProjects}
+                  />
+                </div>
+              )}
             </div>
-            {projects.length > initialItems && (
-              <div className="mt-6 w-full flex justify-start">
-                <ToggleButton
-                  onClick={() => toggleShowMore('projects')}
-                  isShowingMore={showAllProjects}
-                />
-              </div>
-            )}
           </TabPanel>
 
+          {/* TAB 1: DATA ANALYTICS & EXCEL CASE STUDIES */}
           <TabPanel value={value} index={1}>
+            <div className="container mx-auto">
+              {/* Header Title */}
+              <div className="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-3">
+                  <FileSpreadsheet className="w-4 h-4" />
+                  <span>Visual Case Studies</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  Data Analytics &amp; Reporting Showcase
+                </h3>
+                <p className="mt-2 text-xs sm:text-sm text-gray-400">
+                  Pilih salah satu proyek di bawah ini untuk melihat detail case study, alur kerja, validasi otomatis, dan bedah rumus formula.
+                </p>
+              </div>
+
+              {/* Proyek Selector (Pill Switcher) - Pilih mana yang mau ditampilkan */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-10" data-aos="fade-up" data-aos-delay="100">
+                <button
+                  type="button"
+                  onClick={() => setSelectedCaseStudyId("edp-weekly-reporting")}
+                  className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2.5 ${
+                    selectedCaseStudyId === "edp-weekly-reporting"
+                      ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-600/30 scale-105 border border-indigo-400/40"
+                      : "bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/10"
+                  }`}
+                >
+                  <FileSpreadsheet className="w-4 h-4 text-emerald-400" />
+                  <span>1. Retail Weekly Analytics (EDP)</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedCaseStudyId("snt-omnichannel-tracking")}
+                  className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2.5 ${
+                    selectedCaseStudyId === "snt-omnichannel-tracking"
+                      ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-600/30 scale-105 border border-indigo-400/40"
+                      : "bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/10"
+                  }`}
+                >
+                  <FileSpreadsheet className="w-4 h-4 text-indigo-400" />
+                  <span>2. Omnichannel Reconciliation (S&amp;T)</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedCaseStudyId("all")}
+                  className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2.5 ${
+                    selectedCaseStudyId === "all"
+                      ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-600/30 scale-105 border border-indigo-400/40"
+                      : "bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/10"
+                  }`}
+                >
+                  <LayoutGrid className="w-4 h-4" />
+                  <span>Tampilkan Keduanya</span>
+                </button>
+              </div>
+
+              {/* Render Selected Case Study */}
+              <div className="flex flex-col gap-8">
+                {caseStudiesData
+                  .filter((cs) => selectedCaseStudyId === "all" || cs.id === selectedCaseStudyId)
+                  .map((caseStudy) => (
+                    <div key={caseStudy.id} data-aos="fade-up" data-aos-duration="800">
+                      <CaseStudyCard data={caseStudy} />
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </TabPanel>
+
+          {/* TAB 2: CERTIFICATES */}
+          <TabPanel value={value} index={2}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
                 {displayedCertificates.map((certificate, index) => (
@@ -350,14 +567,15 @@ export default function FullWidthTabs() {
             {certificates.length > initialItems && (
               <div className="mt-6 w-full flex justify-start">
                 <ToggleButton
-                  onClick={() => toggleShowMore('certificates')}
+                  onClick={() => toggleShowMore("certificates")}
                   isShowingMore={showAllCertificates}
                 />
               </div>
             )}
           </TabPanel>
 
-          <TabPanel value={value} index={2}>
+          {/* TAB 3: TECH STACK */}
+          <TabPanel value={value} index={3}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden pb-[5%]">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
                 {techStacks.map((stack, index) => (
